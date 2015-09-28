@@ -1,11 +1,15 @@
 class CommentsController < ApplicationController
 
   def create
+    if logged_in?
     user = User.find_by(id: session[:user_id])
     post = Post.find(params[:comment][:post_id])
     user.comments.create(params_comment)
     redirect_to post_path(post)
+  else
+    redirect_to users_login_signup_path
   end
+end
 
   def edit
     @comment = Comment.find(params[:id])
