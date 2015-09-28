@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 20150928144820) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username",      null: false
-    t.string   "password_hash", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

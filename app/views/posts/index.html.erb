@@ -2,7 +2,8 @@
 
 <% @posts.each do |post|%>
 <li><%= link_to post.title, post.url %></li>
+<li><%= link_to post.comments.count, post_path(post)  %>
 <% end %>
 <br>
 <br>
-<%=link_to "Create a new Post", posts_new_path %>
+<%=link_to "Create a new Post", new_post_path %>
