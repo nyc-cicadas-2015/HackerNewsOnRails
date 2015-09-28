@@ -10,5 +10,7 @@
 
 <% @post.comments.each do |comment| %>
 <li><%= comment.content %></li>
+<% if comment.user == current_user %>
 <li><%= link_to "Edit comment", edit_comment_path(comment) %></li>
+<% end %>
 <% end %>
