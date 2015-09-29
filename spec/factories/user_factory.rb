@@ -12,7 +12,7 @@ FactoryGirl.define do
   factory :signup_user, class: User do
     username { Faker::Internet.email }
     password { Faker::Internet.password(8) }
-    password_again {Faker::Internet.password(8)}
+    confirm {Faker::Internet.password(8)}
   end
 
 end
