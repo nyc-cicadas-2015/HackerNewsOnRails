@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments
 
-  get 'users/login_signup' => 'users#new'
+  get 'users/new' => 'users#new'
   post 'users' => 'users#create'
-  post 'login' => 'users#login'
-  get 'logout' => 'users#logout'
+  get 'sessions/new' => 'sessions#new'
+  post 'sessions' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
