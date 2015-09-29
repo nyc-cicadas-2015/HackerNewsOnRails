@@ -3,7 +3,7 @@
 
 <% @posts.each do |post|%>
 <li><%= link_to post.title, post.url %></li>
-<li><%= link_to post.comments.count, post_path(post)  %>
+<li id='post_<%= post.id %>'><%= link_to post.comments.count, post_path(post)  %></li>
 <% end %>
 <br>
 <br>
