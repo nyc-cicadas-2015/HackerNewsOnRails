@@ -10,13 +10,13 @@ class PostsController < ApplicationController
 
   def create
     if logged_in?
-    user = User.find_by(id: session[:user_id])
-    post = user.posts.create(post_params)
-    redirect_to root_path
-  else
-    redirect_to users_login_signup_path
+      user = User.find_by(id: session[:user_id])
+      post = user.posts.create(post_params)
+      redirect_to root_path
+    else
+      redirect_to users_login_signup_path
+    end
   end
-end
 
   def show
     @post = Post.find(params[:id])
