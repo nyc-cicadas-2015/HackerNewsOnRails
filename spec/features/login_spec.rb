@@ -1,6 +1,5 @@
 require_relative '../rails_helper'
 
-
 feature "the signin process" do
   background :each do
     create(:user)
