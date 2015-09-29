@@ -1,6 +1,6 @@
 require_relative '../rails_helper'
 
-feature "the signin process" do
+feature "creating a post" do
   background :each do
     create(:user)
     log_me_in
@@ -12,20 +12,21 @@ feature "the signin process" do
       fill_in 'Username', :with => user[:username]
       fill_in 'Password', :with => user[:password]
     end
-
-    click_button 'Sign in'
+   click_button 'Sign in'
   }
 
   let(:user){attributes_for(:user)}
 
-  scenario "Login with correct credentials" do
-    expect(page).to have_content 'Success'
-  end
 
-  scenario "Logout" do
-    click_link('Logout')
-    expect(page).to have_content 'You are successfully logged out'
-  end
 
+  let(:post){attributes_for(:post)}
+
+  scenario "Create a post" do
+    click_link('Create a new Post')
+    fill_in 'Title', :with => post[:title]
+    fill_in 'Url', :with => post[:url]
+    click_button('Post your Post')
+    expect(page).to have_content post[:title]
+  end
 
 end
