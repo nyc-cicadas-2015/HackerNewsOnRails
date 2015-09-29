@@ -13,7 +13,7 @@ feature "the signin process" do
       fill_in 'Password', :with => user[:password]
     end
 
-    click_button 'Sign in'
+    click_button 'Login'
   }
 
   let(:user){attributes_for(:user)}
