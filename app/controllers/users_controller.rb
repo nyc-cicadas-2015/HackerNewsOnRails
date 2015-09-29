@@ -9,24 +9,10 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      redirect_to users_login_signup_path
+      redirect_to users_new_path
     end
   end
 
-  def login
-    user = User.find_by(username: params[:user][:username])
-    if user.authenticate(params[:user][:password])
-      session[:user_id] = user.id
-      redirect_to root_path
-    else
-      redirect_to users_login_signup_path
-    end
-  end
-
-  def logout
-    session.clear
-    redirect_to root_path
-  end
 
   private
 
