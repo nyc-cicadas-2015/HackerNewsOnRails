@@ -27,7 +27,12 @@ feature "the signin process" do
     expect(page).to have_content 'You are successfully logged out'
   end
 
+  let(:post){attributes_for(:post)}
 
-
+  scenario "Create a post" do
+    click_link('Create a new post')
+    fill_in 'title', :with => post[:title]
+    fill_in 'url', :with => post[:url]
+  end
 
 end
