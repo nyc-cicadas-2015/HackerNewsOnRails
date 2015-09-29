@@ -1,7 +1,9 @@
 <%= link_to "Home", root_path %>
-<% if logged_in? %>
+<% if logged_in?%>
+<%= flash[:success] %>
 <%= current_user.username %>
 <%= link_to "Logout", logout_path %>
 <% else %>
-<%=link_to "Login & Signup", users_login_signup_path %>
+<%=link_to "Login & Signup", sessions_new_path %>
+<%= flash[:logout] %>
 <% end %>
