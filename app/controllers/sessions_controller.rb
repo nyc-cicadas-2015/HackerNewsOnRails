@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
 
  def create
     user = User.find_by(username: params[:user][:username])
-    if user.authenticate(params[:user][:password])
+    if user
+      user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       flash[:success] = "Success"
       redirect_to root_path
@@ -21,5 +22,10 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :password_confirmation)
+  end
 
 end

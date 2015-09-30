@@ -1,3 +1,6 @@
+<div class='nav_bar'>
+<div class= 'header'><a href='/'>Hacker Clone </a></div>
+
 <%= link_to "Home", root_path %>
 <% if logged_in?%>
 <%= flash[:success] %>
@@ -7,3 +10,5 @@
 <%=link_to "Login & Signup", sessions_new_path %>
 <%= flash[:logout] %>
 <% end %>
+
+</div>

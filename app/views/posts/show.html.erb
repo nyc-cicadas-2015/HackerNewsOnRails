@@ -1,3 +1,6 @@
+<div class='container'>
+
+
 <h1><%=@post.title%></h1>
 
 <%= form_for @comment do |f| %>
@@ -14,3 +17,5 @@
 <li><%= link_to "Edit comment", edit_comment_path(comment) %></li>
 <% end %>
 <% end %>
+
+</div>

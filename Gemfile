@@ -38,14 +38,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'bcrypt', '~> 3.1.7'
   gem 'factory_girl_rails'
-
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :test do
-   gem 'capybara'
-   gem 'database_cleaner'
-   gem 'faker'
- end
+
+end
 
 
 # Use unicorn as the app server

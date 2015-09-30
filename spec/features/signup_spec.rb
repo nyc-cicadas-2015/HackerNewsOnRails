@@ -3,7 +3,6 @@ require_relative '../rails_helper'
 feature "the signup process" do
   background :each do
       create(:user)
-      puts user
   end
 
   let(:user){attributes_for(:user)}
