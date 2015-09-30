@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       post = user.posts.create(post_params)
       redirect_to root_path
     else
-      redirect_to users_login_signup_path
+      redirect_to sessions_new_path
     end
   end
 
